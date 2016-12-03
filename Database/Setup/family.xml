@@ -1,0 +1,352 @@
+<family xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <people>
+    <person forenames="forenames1" id="id1" sex="sex1" surname="surname1">
+      <born date="date1" />
+      <born date="date2" />
+      <born date="date3" />
+      <born date="date4" />
+      <born date="date5" />
+      <mother id="id1" />
+      <mother id="id2" />
+      <mother id="id3" />
+      <mother id="id4" />
+      <mother id="id5" />
+      <father id="id1" />
+      <father id="id2" />
+      <father id="id3" />
+      <father id="id4" />
+      <father id="id5" />
+      <died date="date1" />
+      <died date="date2" />
+      <died date="date3" />
+      <died date="date4" />
+      <died date="date5" />
+    </person>
+    <person forenames="forenames2" id="id2" sex="sex2" surname="surname2">
+      <born date="date6" />
+      <born date="date7" />
+      <born date="date8" />
+      <born date="date9" />
+      <born date="date10" />
+      <mother id="id6" />
+      <mother id="id7" />
+      <mother id="id8" />
+      <mother id="id9" />
+      <mother id="id10" />
+      <father id="id6" />
+      <father id="id7" />
+      <father id="id8" />
+      <father id="id9" />
+      <father id="id10" />
+      <died date="date6" />
+      <died date="date7" />
+      <died date="date8" />
+      <died date="date9" />
+      <died date="date10" />
+    </person>
+    <person forenames="forenames3" id="id3" sex="sex3" surname="surname3">
+      <born date="date11" />
+      <born date="date12" />
+      <born date="date13" />
+      <born date="date14" />
+      <born date="date15" />
+      <mother id="id11" />
+      <mother id="id12" />
+      <mother id="id13" />
+      <mother id="id14" />
+      <mother id="id15" />
+      <father id="id11" />
+      <father id="id12" />
+      <father id="id13" />
+      <father id="id14" />
+      <father id="id15" />
+      <died date="date11" />
+      <died date="date12" />
+      <died date="date13" />
+      <died date="date14" />
+      <died date="date15" />
+    </person>
+    <person forenames="forenames4" id="id4" sex="sex4" surname="surname4">
+      <born date="date16" />
+      <born date="date17" />
+      <born date="date18" />
+      <born date="date19" />
+      <born date="date20" />
+      <mother id="id16" />
+      <mother id="id17" />
+      <mother id="id18" />
+      <mother id="id19" />
+      <mother id="id20" />
+      <father id="id16" />
+      <father id="id17" />
+      <father id="id18" />
+      <father id="id19" />
+      <father id="id20" />
+      <died date="date16" />
+      <died date="date17" />
+      <died date="date18" />
+      <died date="date19" />
+      <died date="date20" />
+    </person>
+    <person forenames="forenames5" id="id5" sex="sex5" surname="surname5">
+      <born date="date21" />
+      <born date="date22" />
+      <born date="date23" />
+      <born date="date24" />
+      <born date="date25" />
+      <mother id="id21" />
+      <mother id="id22" />
+      <mother id="id23" />
+      <mother id="id24" />
+      <mother id="id25" />
+      <father id="id21" />
+      <father id="id22" />
+      <father id="id23" />
+      <father id="id24" />
+      <father id="id25" />
+      <died date="date21" />
+      <died date="date22" />
+      <died date="date23" />
+      <died date="date24" />
+      <died date="date25" />
+    </person>
+  </people>
+  <marriages>
+    <marriage date="date1" husband="husband1" wife="wife1" />
+    <marriage date="date2" husband="husband2" wife="wife2" />
+    <marriage date="date3" husband="husband3" wife="wife3" />
+    <marriage date="date4" husband="husband4" wife="wife4" />
+    <marriage date="date5" husband="husband5" wife="wife5" />
+  </marriages>
+  <people>
+    <person forenames="forenames6" id="id6" sex="sex6" surname="surname6">
+      <born date="date26" />
+      <born date="date27" />
+      <born date="date28" />
+      <born date="date29" />
+      <born date="date30" />
+      <mother id="id26" />
+      <mother id="id27" />
+      <mother id="id28" />
+      <mother id="id29" />
+      <mother id="id30" />
+      <father id="id26" />
+      <father id="id27" />
+      <father id="id28" />
+      <father id="id29" />
+      <father id="id30" />
+      <died date="date26" />
+      <died date="date27" />
+      <died date="date28" />
+      <died date="date29" />
+      <died date="date30" />
+    </person>
+    <person forenames="forenames7" id="id7" sex="sex7" surname="surname7">
+      <born date="date31" />
+      <born date="date32" />
+      <born date="date33" />
+      <born date="date34" />
+      <born date="date35" />
+      <mother id="id31" />
+      <mother id="id32" />
+      <mother id="id33" />
+      <mother id="id34" />
+      <mother id="id35" />
+      <father id="id31" />
+      <father id="id32" />
+      <father id="id33" />
+      <father id="id34" />
+      <father id="id35" />
+      <died date="date31" />
+      <died date="date32" />
+      <died date="date33" />
+      <died date="date34" />
+      <died date="date35" />
+    </person>
+    <person forenames="forenames8" id="id8" sex="sex8" surname="surname8">
+      <born date="date36" />
+      <born date="date37" />
+      <born date="date38" />
+      <born date="date39" />
+      <born date="date40" />
+      <mother id="id36" />
+      <mother id="id37" />
+      <mother id="id38" />
+      <mother id="id39" />
+      <mother id="id40" />
+      <father id="id36" />
+      <father id="id37" />
+      <father id="id38" />
+      <father id="id39" />
+      <father id="id40" />
+      <died date="date36" />
+      <died date="date37" />
+      <died date="date38" />
+      <died date="date39" />
+      <died date="date40" />
+    </person>
+    <person forenames="forenames9" id="id9" sex="sex9" surname="surname9">
+      <born date="date41" />
+      <born date="date42" />
+      <born date="date43" />
+      <born date="date44" />
+      <born date="date45" />
+      <mother id="id41" />
+      <mother id="id42" />
+      <mother id="id43" />
+      <mother id="id44" />
+      <mother id="id45" />
+      <father id="id41" />
+      <father id="id42" />
+      <father id="id43" />
+      <father id="id44" />
+      <father id="id45" />
+      <died date="date41" />
+      <died date="date42" />
+      <died date="date43" />
+      <died date="date44" />
+      <died date="date45" />
+    </person>
+    <person forenames="forenames10" id="id10" sex="sex10" surname="surname10">
+      <born date="date46" />
+      <born date="date47" />
+      <born date="date48" />
+      <born date="date49" />
+      <born date="date50" />
+      <mother id="id46" />
+      <mother id="id47" />
+      <mother id="id48" />
+      <mother id="id49" />
+      <mother id="id50" />
+      <father id="id46" />
+      <father id="id47" />
+      <father id="id48" />
+      <father id="id49" />
+      <father id="id50" />
+      <died date="date46" />
+      <died date="date47" />
+      <died date="date48" />
+      <died date="date49" />
+      <died date="date50" />
+    </person>
+  </people>
+  <marriages>
+    <marriage date="date6" husband="husband6" wife="wife6" />
+    <marriage date="date7" husband="husband7" wife="wife7" />
+    <marriage date="date8" husband="husband8" wife="wife8" />
+    <marriage date="date9" husband="husband9" wife="wife9" />
+    <marriage date="date10" husband="husband10" wife="wife10" />
+  </marriages>
+  <people>
+    <person forenames="forenames11" id="id11" sex="sex11" surname="surname11">
+      <born date="date51" />
+      <born date="date52" />
+      <born date="date53" />
+      <born date="date54" />
+      <born date="date55" />
+      <mother id="id51" />
+      <mother id="id52" />
+      <mother id="id53" />
+      <mother id="id54" />
+      <mother id="id55" />
+      <father id="id51" />
+      <father id="id52" />
+      <father id="id53" />
+      <father id="id54" />
+      <father id="id55" />
+      <died date="date51" />
+      <died date="date52" />
+      <died date="date53" />
+      <died date="date54" />
+      <died date="date55" />
+    </person>
+    <person forenames="forenames12" id="id12" sex="sex12" surname="surname12">
+      <born date="date56" />
+      <born date="date57" />
+      <born date="date58" />
+      <born date="date59" />
+      <born date="date60" />
+      <mother id="id56" />
+      <mother id="id57" />
+      <mother id="id58" />
+      <mother id="id59" />
+      <mother id="id60" />
+      <father id="id56" />
+      <father id="id57" />
+      <father id="id58" />
+      <father id="id59" />
+      <father id="id60" />
+      <died date="date56" />
+      <died date="date57" />
+      <died date="date58" />
+      <died date="date59" />
+      <died date="date60" />
+    </person>
+    <person forenames="forenames13" id="id13" sex="sex13" surname="surname13">
+      <born date="date61" />
+      <born date="date62" />
+      <born date="date63" />
+      <born date="date64" />
+      <born date="date65" />
+      <mother id="id61" />
+      <mother id="id62" />
+      <mother id="id63" />
+      <mother id="id64" />
+      <mother id="id65" />
+      <father id="id61" />
+      <father id="id62" />
+      <father id="id63" />
+      <father id="id64" />
+      <father id="id65" />
+      <died date="date61" />
+      <died date="date62" />
+      <died date="date63" />
+      <died date="date64" />
+      <died date="date65" />
+    </person>
+    <person forenames="forenames14" id="id14" sex="sex14" surname="surname14">
+      <born date="date66" />
+      <born date="date67" />
+      <born date="date68" />
+      <born date="date69" />
+      <born date="date70" />
+      <mother id="id66" />
+      <mother id="id67" />
+      <mother id="id68" />
+      <mother id="id69" />
+      <mother id="id70" />
+      <father id="id66" />
+      <father id="id67" />
+      <father id="id68" />
+      <father id="id69" />
+      <father id="id70" />
+      <died date="date66" />
+      <died date="date67" />
+      <died date="date68" />
+      <died date="date69" />
+      <died date="date70" />
+    </person>
+    <person forenames="forenames15" id="id15" sex="sex15" surname="surname15">
+      <born date="date71" />
+      <born date="date72" />
+      <born date="date73" />
+      <born date="date74" />
+      <born date="date75" />
+      <mother id="id71" />
+      <mother id="id72" />
+      <mother id="id73" />
+      <mother id="id74" />
+      <mother id="id75" />
+      <father id="id71" />
+      <father id="id72" />
+      <father id="id73" />
+      <father id="id74" />
+      <father id="id75" />
+      <died date="date71" />
+      <died date="date72" />
+      <died date="date73" />
+      <died date="date74" />
+      <died date="date75" />
+    </person>
+  </people>
+</family>

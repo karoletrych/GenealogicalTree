@@ -1,0 +1,31 @@
+<family>
+	<people>
+		<person forenames="Granddad" id="Granddad" sex="male" surname="Example">
+			<born date="1915"/>
+			<died date="1998"/>
+		</person>
+		<person forenames="Granny" id="Grandma" sex="female" surname="Jones"/>
+		<person forenames="Daddy" id="Dad" sex="male" surname="Example">
+			<born date="1940"/>
+			<mother id="Grandma"/>
+			<father id="Granddad"/>
+		</person>
+		<person forenames="Mommy" id="Mom" sex="female" surname="Smith"/>
+		<person forenames="Uncle" id="Uncle" sex="male" surname="Example"/>
+		<person forenames="Aunt" id="Aunt" sex="female" surname="Trotter"/>
+		<person forenames="Me" id="Me" sex="male" surname="Example">
+			<born date="1973"/>
+			<mother id="Mom"/>
+			<father id="Dad"/>
+		</person>
+		<person forenames="Brother" id="Brother" sex="male" surname="Example">
+			<born date="1971"/>
+			<mother id="Mom"/>
+			<father id="Dad"/>
+		</person>
+	</people>
+	<marriages>
+		<marriage date="1964" husband="Dad" wife="Mom"/>
+		<marriage husband="Uncle" wife="Aunt"/>
+	</marriages>
+</family>
