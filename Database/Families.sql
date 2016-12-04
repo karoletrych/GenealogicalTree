@@ -4,3 +4,4 @@
 	[Family] XML NULL, 
     [FamilyName] NVARCHAR(50) NULL, 
 )
+go

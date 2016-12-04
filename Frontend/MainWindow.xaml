@@ -2,18 +2,20 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:self="clr-namespace:Frontend"
+        xmlns:application="clr-namespace:Application;assembly=Application"
+        xmlns:global="clr-namespace:;assembly=Application"
         Title="TreeViewMultipleTemplatesSample" Height="200" Width="250">
     <Grid Margin="10">
         <TreeView Name="TrvFamilies">
             <TreeView.Resources>
-                <HierarchicalDataTemplate DataType="{x:Type self:family}" ItemsSource="{Binding people}">
+                <HierarchicalDataTemplate DataType="{x:Type application:family}" ItemsSource="{Binding people}">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text=" [" Foreground="Blue" />
                         <TextBlock Text="{Binding people.Length}" Foreground="Blue" />
                         <TextBlock Text="]" Foreground="Blue" />
                     </StackPanel>
                 </HierarchicalDataTemplate>
-                <DataTemplate DataType="{x:Type self:familyPerson}">
+                <DataTemplate DataType="{x:Type application:familyPerson}">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{Binding forenames}" />
                         <TextBlock Text=" (" Foreground="Green" />

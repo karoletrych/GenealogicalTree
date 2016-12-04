@@ -1,4 +1,4 @@
-﻿namespace Frontend
+﻿namespace Application
 {
     /// <remarks/>
     [System.SerializableAttribute()]
@@ -38,11 +38,6 @@
             {
                 this.marriagesField = value;
             }
-        }
-
-        public object Members
-        {
-            get { throw new System.NotImplementedException(); }
         }
     }
 
@@ -185,11 +180,11 @@
     public partial class familyPersonBorn
     {
 
-        private ushort dateField;
+        private string dateField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public ushort date
+        public string date
         {
             get
             {
@@ -257,11 +252,11 @@
     public partial class familyPersonDied
     {
 
-        private ushort dateField;
+        private string dateField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public ushort date
+        public string date
         {
             get
             {
@@ -281,9 +276,7 @@
     public partial class familyMarriage
     {
 
-        private ushort dateField;
-
-        private bool dateFieldSpecified;
+        private string dateField;
 
         private string husbandField;
 
@@ -291,7 +284,7 @@
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public ushort date
+        public string date
         {
             get
             {
@@ -300,20 +293,6 @@
             set
             {
                 this.dateField = value;
-            }
-        }
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool dateSpecified
-        {
-            get
-            {
-                return this.dateFieldSpecified;
-            }
-            set
-            {
-                this.dateFieldSpecified = value;
             }
         }
 

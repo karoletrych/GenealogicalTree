@@ -67,16 +67,24 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Setup\family.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <Build Include="ReadPerson.sql" />
     <Build Include="Families.sql" />
+    <PostDeploy Include="Setup\setup.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Database.refactorlog" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Delete.cs" />
+    <Compile Include="DeletePerson.cs" />
+    <Compile Include="CreatePerson.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Application.csproj">
+      <Name>Application</Name>
+      <Project>{a36d384c-852b-4e32-b0f5-9ba40beec1a0}</Project>
+      <Private>True</Private>
+      <IsModelAware>True</IsModelAware>
+      <GenerateSqlClrDdl>True</GenerateSqlClrDdl>
+    </ProjectReference>
   </ItemGroup>
 </Project>
