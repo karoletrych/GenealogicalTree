@@ -1,4 +1,6 @@
 ﻿CREATE TABLE [dbo].[Families]
 (
-	[Family] XML NULL
+    [Id] INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	[Family] XML NULL, 
+    [FamilyName] NVARCHAR(50) NULL, 
 )

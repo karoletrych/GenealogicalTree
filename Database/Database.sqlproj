@@ -63,11 +63,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Create.cs" />
-    <Compile Include="Update.cs" />
-    <Compile Include="Delete.cs" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Setup\family.xml" />
@@ -78,5 +75,8 @@
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Database.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Delete.cs" />
   </ItemGroup>
 </Project>
