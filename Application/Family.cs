@@ -1,327 +1,232 @@
-﻿namespace Application
+﻿using System;
+using System.ComponentModel;
+using System.Xml.Serialization;
+
+namespace Application
 {
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
-    public partial class family
+    /// <remarks />
+    [Serializable]
+    [DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    [XmlRoot(Namespace = "", IsNullable = false)]
+    public class family
     {
+        private familyMarriage[] marriagesField;
 
         private familyPerson[] peopleField;
 
-        private familyMarriage[] marriagesField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("person", IsNullable = false)]
+        /// <remarks />
+        [XmlArrayItem("person", IsNullable = false)]
         public familyPerson[] people
         {
-            get
-            {
-                return this.peopleField;
-            }
-            set
-            {
-                this.peopleField = value;
-            }
+            get { return peopleField; }
+            set { peopleField = value; }
         }
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("marriage", IsNullable = false)]
+        /// <remarks />
+        [XmlArrayItem("marriage", IsNullable = false)]
         public familyMarriage[] marriages
         {
-            get
-            {
-                return this.marriagesField;
-            }
-            set
-            {
-                this.marriagesField = value;
-            }
+            get { return marriagesField; }
+            set { marriagesField = value; }
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class familyPerson
+    /// <remarks />
+    [Serializable]
+    [DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public class familyPerson
     {
-
         private familyPersonBorn bornField;
 
-        private familyPersonMother motherField;
+        private familyPersonDied diedField;
 
         private familyPersonFather fatherField;
-
-        private familyPersonDied diedField;
 
         private string forenamesField;
 
         private string idField;
 
+        private familyPersonMother motherField;
+
         private string sexField;
 
         private string surnameField;
 
-        /// <remarks/>
+        /// <remarks />
         public familyPersonBorn born
         {
-            get
-            {
-                return this.bornField;
-            }
-            set
-            {
-                this.bornField = value;
-            }
+            get { return bornField; }
+            set { bornField = value; }
         }
 
-        /// <remarks/>
+        /// <remarks />
         public familyPersonMother mother
         {
-            get
-            {
-                return this.motherField;
-            }
-            set
-            {
-                this.motherField = value;
-            }
+            get { return motherField; }
+            set { motherField = value; }
         }
 
-        /// <remarks/>
+        /// <remarks />
         public familyPersonFather father
         {
-            get
-            {
-                return this.fatherField;
-            }
-            set
-            {
-                this.fatherField = value;
-            }
+            get { return fatherField; }
+            set { fatherField = value; }
         }
 
-        /// <remarks/>
+        /// <remarks />
         public familyPersonDied died
         {
-            get
-            {
-                return this.diedField;
-            }
-            set
-            {
-                this.diedField = value;
-            }
+            get { return diedField; }
+            set { diedField = value; }
         }
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        /// <remarks />
+        [XmlAttribute]
         public string forenames
         {
-            get
-            {
-                return this.forenamesField;
-            }
-            set
-            {
-                this.forenamesField = value;
-            }
+            get { return forenamesField; }
+            set { forenamesField = value; }
         }
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        /// <remarks />
+        [XmlAttribute]
         public string id
         {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
+            get { return idField; }
+            set { idField = value; }
         }
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        /// <remarks />
+        [XmlAttribute]
         public string sex
         {
-            get
-            {
-                return this.sexField;
-            }
-            set
-            {
-                this.sexField = value;
-            }
+            get { return sexField; }
+            set { sexField = value; }
         }
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        /// <remarks />
+        [XmlAttribute]
         public string surname
         {
-            get
-            {
-                return this.surnameField;
-            }
-            set
-            {
-                this.surnameField = value;
-            }
+            get { return surnameField; }
+            set { surnameField = value; }
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class familyPersonBorn
+    /// <remarks />
+    [Serializable]
+    [DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public class familyPersonBorn
     {
+        private ushort dateField;
 
-        private string dateField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string date
+        /// <remarks />
+        [XmlAttribute]
+        public ushort date
         {
-            get
-            {
-                return this.dateField;
-            }
-            set
-            {
-                this.dateField = value;
-            }
+            get { return dateField; }
+            set { dateField = value; }
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class familyPersonMother
+    /// <remarks />
+    [Serializable]
+    [DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public class familyPersonMother
     {
-
         private string idField;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        /// <remarks />
+        [XmlAttribute]
         public string id
         {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
+            get { return idField; }
+            set { idField = value; }
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class familyPersonFather
+    /// <remarks />
+    [Serializable]
+    [DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public class familyPersonFather
     {
-
         private string idField;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        /// <remarks />
+        [XmlAttribute]
         public string id
         {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
+            get { return idField; }
+            set { idField = value; }
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class familyPersonDied
+    /// <remarks />
+    [Serializable]
+    [DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public class familyPersonDied
     {
+        private ushort dateField;
 
-        private string dateField;
-
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string date
+        /// <remarks />
+        [XmlAttribute]
+        public ushort date
         {
-            get
-            {
-                return this.dateField;
-            }
-            set
-            {
-                this.dateField = value;
-            }
+            get { return dateField; }
+            set { dateField = value; }
         }
     }
 
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class familyMarriage
+    /// <remarks />
+    [Serializable]
+    [DesignerCategory("code")]
+    [XmlType(AnonymousType = true)]
+    public class familyMarriage
     {
+        private ushort dateField;
 
-        private string dateField;
+        private bool dateFieldSpecified;
 
         private string husbandField;
 
         private string wifeField;
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string date
+        /// <remarks />
+        [XmlAttribute]
+        public ushort date
         {
-            get
-            {
-                return this.dateField;
-            }
-            set
-            {
-                this.dateField = value;
-            }
+            get { return dateField; }
+            set { dateField = value; }
         }
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        /// <remarks />
+        [XmlIgnore]
+        public bool dateSpecified
+        {
+            get { return dateFieldSpecified; }
+            set { dateFieldSpecified = value; }
+        }
+
+        /// <remarks />
+        [XmlAttribute]
         public string husband
         {
-            get
-            {
-                return this.husbandField;
-            }
-            set
-            {
-                this.husbandField = value;
-            }
+            get { return husbandField; }
+            set { husbandField = value; }
         }
 
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        /// <remarks />
+        [XmlAttribute]
         public string wife
         {
-            get
-            {
-                return this.wifeField;
-            }
-            set
-            {
-                this.wifeField = value;
-            }
+            get { return wifeField; }
+            set { wifeField = value; }
         }
     }
 }

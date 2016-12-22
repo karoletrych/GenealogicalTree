@@ -6,8 +6,8 @@
     <ProjectGuid>{93B0D1EE-BE10-44EA-84DA-953D54C2A113}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Tests</RootNamespace>
-    <AssemblyName>Tests</AssemblyName>
+    <RootNamespace>Tests.DatabaseTests</RootNamespace>
+    <AssemblyName>Tests.DatabaseTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -51,20 +51,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Delete.cs">
-      <SubType>Designer</SubType>
-    </Compile>
     <Compile Include="SqlDatabaseSetup.cs" />
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Delete.resx">
-      <DependentUpon>Delete.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

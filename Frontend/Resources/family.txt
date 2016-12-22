@@ -1,0 +1,41 @@
+<family xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <people>
+    <person forenames="forenames1" id="id1" sex="sex1" surname="surname1">
+      <born date="date1" />
+      <mother id="id1" />
+      <father id="id1" />
+      <died date="date1" />
+    </person>
+    <person forenames="forenames2" id="id2" sex="sex2" surname="surname2">
+      <born date="date2" />
+      <mother id="id2" />
+      <father id="id2" />
+      <died date="date2" />
+    </person>
+    <person forenames="forenames3" id="id3" sex="sex3" surname="surname3">
+      <born date="date3" />
+      <mother id="id3" />
+      <father id="id3" />
+      <died date="date3" />
+    </person>
+    <person forenames="forenames4" id="id4" sex="sex4" surname="surname4">
+      <born date="date4" />
+      <mother id="id4" />
+      <father id="id4" />
+      <died date="date4" />
+    </person>
+    <person forenames="forenames5" id="id5" sex="sex5" surname="surname5">
+      <born date="date5" />
+      <mother id="id5" />
+      <father id="id5" />
+      <died date="date5" />
+    </person>
+  </people>
+  <marriages>
+    <marriage date="date1" husband="husband1" wife="wife1" />
+    <marriage date="date2" husband="husband2" wife="wife2" />
+    <marriage date="date3" husband="husband3" wife="wife3" />
+    <marriage date="date4" husband="husband4" wife="wife4" />
+    <marriage date="date5" husband="husband5" wife="wife5" />
+  </marriages>
+</family>

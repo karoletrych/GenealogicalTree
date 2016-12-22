@@ -72,11 +72,9 @@
     <PostDeploy Include="Setup\setup.sql" />
   </ItemGroup>
   <ItemGroup>
-    <RefactorLog Include="Database.refactorlog" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="DeletePerson.cs" />
     <Compile Include="CreatePerson.cs" />
+    <Compile Include="ReadRootPersons.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Application\Application.csproj">
