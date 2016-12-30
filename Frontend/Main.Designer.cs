@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbPersons = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bAddPerson = new System.Windows.Forms.Button();
             this.bDeletePerson = new System.Windows.Forms.Button();
@@ -39,22 +38,20 @@
             this.bDeleteMarriage = new System.Windows.Forms.Button();
             this.dgMarriages = new System.Windows.Forms.DataGridView();
             this.tbDetails = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.bAddFamily = new System.Windows.Forms.Button();
+            this.tbFamilyName = new System.Windows.Forms.TextBox();
+            this.Nazwa = new System.Windows.Forms.Label();
+            this.bDeleteFamily = new System.Windows.Forms.Button();
+            this.lbPersons = new System.Windows.Forms.ListBox();
+            this.lbFamilies = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgMarriages)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lbPersons
-            // 
-            this.lbPersons.FormattingEnabled = true;
-            this.lbPersons.Location = new System.Drawing.Point(23, 32);
-            this.lbPersons.Name = "lbPersons";
-            this.lbPersons.Size = new System.Drawing.Size(149, 407);
-            this.lbPersons.TabIndex = 0;
-            this.lbPersons.SelectedIndexChanged += new System.EventHandler(this.lbPersons_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 15);
+            this.label1.Location = new System.Drawing.Point(20, 133);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 3;
@@ -146,11 +143,81 @@
             this.tbDetails.TabIndex = 15;
             this.tbDetails.Text = "";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(23, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Rodziny";
+            // 
+            // bAddFamily
+            // 
+            this.bAddFamily.Location = new System.Drawing.Point(116, 94);
+            this.bAddFamily.Name = "bAddFamily";
+            this.bAddFamily.Size = new System.Drawing.Size(56, 23);
+            this.bAddFamily.TabIndex = 18;
+            this.bAddFamily.Text = "Dodaj";
+            this.bAddFamily.UseVisualStyleBackColor = true;
+            this.bAddFamily.Click += new System.EventHandler(this.bAddFamily_Click);
+            // 
+            // tbFamilyName
+            // 
+            this.tbFamilyName.Location = new System.Drawing.Point(47, 94);
+            this.tbFamilyName.Name = "tbFamilyName";
+            this.tbFamilyName.Size = new System.Drawing.Size(63, 20);
+            this.tbFamilyName.TabIndex = 19;
+            // 
+            // Nazwa
+            // 
+            this.Nazwa.AutoSize = true;
+            this.Nazwa.Location = new System.Drawing.Point(1, 94);
+            this.Nazwa.Name = "Nazwa";
+            this.Nazwa.Size = new System.Drawing.Size(40, 13);
+            this.Nazwa.TabIndex = 20;
+            this.Nazwa.Text = "Nazwa";
+            // 
+            // bDeleteFamily
+            // 
+            this.bDeleteFamily.Location = new System.Drawing.Point(116, 120);
+            this.bDeleteFamily.Name = "bDeleteFamily";
+            this.bDeleteFamily.Size = new System.Drawing.Size(56, 23);
+            this.bDeleteFamily.TabIndex = 21;
+            this.bDeleteFamily.Text = "Usuń";
+            this.bDeleteFamily.UseVisualStyleBackColor = true;
+            this.bDeleteFamily.Click += new System.EventHandler(this.bDeleteFamily_Click);
+            // 
+            // lbPersons
+            // 
+            this.lbPersons.FormattingEnabled = true;
+            this.lbPersons.Location = new System.Drawing.Point(23, 160);
+            this.lbPersons.Name = "lbPersons";
+            this.lbPersons.Size = new System.Drawing.Size(161, 277);
+            this.lbPersons.TabIndex = 23;
+            this.lbPersons.SelectedIndexChanged += new System.EventHandler(this.lbPersons_SelectedIndexChanged);
+            // 
+            // lbFamilies
+            // 
+            this.lbFamilies.FormattingEnabled = true;
+            this.lbFamilies.Location = new System.Drawing.Point(13, 32);
+            this.lbFamilies.Name = "lbFamilies";
+            this.lbFamilies.Size = new System.Drawing.Size(159, 56);
+            this.lbFamilies.TabIndex = 24;
+            this.lbFamilies.SelectedIndexChanged += new System.EventHandler(this.lbFamilies_SelectedIndexChanged);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(640, 516);
+            this.Controls.Add(this.lbFamilies);
+            this.Controls.Add(this.lbPersons);
+            this.Controls.Add(this.bDeleteFamily);
+            this.Controls.Add(this.Nazwa);
+            this.Controls.Add(this.tbFamilyName);
+            this.Controls.Add(this.bAddFamily);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.tbDetails);
             this.Controls.Add(this.dgMarriages);
             this.Controls.Add(this.bDeleteMarriage);
@@ -161,10 +228,9 @@
             this.Controls.Add(this.bDeletePerson);
             this.Controls.Add(this.bAddPerson);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbPersons);
             this.Name = "Main";
             this.Text = "DrzewoGenealogiczne";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgMarriages)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -173,7 +239,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox lbPersons;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bAddPerson;
         private System.Windows.Forms.Button bDeletePerson;
@@ -184,6 +249,13 @@
         private System.Windows.Forms.Button bDeleteMarriage;
         private System.Windows.Forms.DataGridView dgMarriages;
         private System.Windows.Forms.RichTextBox tbDetails;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button bAddFamily;
+        private System.Windows.Forms.TextBox tbFamilyName;
+        private System.Windows.Forms.Label Nazwa;
+        private System.Windows.Forms.Button bDeleteFamily;
+        private System.Windows.Forms.ListBox lbPersons;
+        private System.Windows.Forms.ListBox lbFamilies;
     }
 }
 

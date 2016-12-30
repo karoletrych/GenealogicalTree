@@ -27,7 +27,7 @@ namespace Frontend
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DAO.CreateMarriage(1, marriageId.Text, husband.Text, wife.Text, marriageDate.Text);
+            DAO.CreateMarriage(_main.SelectedFamily, marriageId.Text, husband.Text, wife.Text, marriageDate.Text);
             _main.DisplayPersonMarriages();
             this.Close();
         }

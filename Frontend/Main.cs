@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
@@ -9,20 +8,30 @@ namespace Frontend
 {
     public partial class Main : Form
     {
+        public int SelectedFamily;
+
         public Main()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Main_Load(object sender, EventArgs e)
         {
+            ReloadFamilies();
             ReloadPersons();
+        }
+
+        private void ReloadFamilies()
+        {
+            lbFamilies.Items.Clear();
+            var families = DAO.ReadFamilies().ToDictionary(pair => pair.Key.ToString(), pair => pair.Value);
+            lbFamilies.Items.AddRange(families.Select(x => x.Key + "/" + x.Value).ToArray());
         }
 
         public void ReloadPersons()
         {
             lbPersons.Items.Clear();
-            var ids = DAO.PersonIds(1).ToArray();
+            object[] ids = DAO.PersonIds(SelectedFamily).ToArray();
             lbPersons.Items.AddRange(ids);
         }
 
@@ -36,7 +45,7 @@ namespace Frontend
         public void DisplayPersonMarriages()
         {
             var selectedId = (string) lbPersons.SelectedItem;
-            var marriagesXml = DAO.MarriagesOfAPerson("1", selectedId);
+            var marriagesXml = DAO.MarriagesOfAPerson(SelectedFamily, selectedId);
             var marriagesXDocument = XDocument.Parse(marriagesXml);
             var xElements = marriagesXDocument.Descendants("marriage").ToArray();
             var marriages =
@@ -57,7 +66,7 @@ namespace Frontend
         private void DisplayPersonDetails()
         {
             var selectedId = (string) lbPersons.SelectedItem;
-            var person = DAO.Person(selectedId);
+            var person = DAO.Person(SelectedFamily, selectedId);
             var xDocument = XDocument.Parse(person);
             tbDetails.Text = xDocument.ToString();
         }
@@ -65,7 +74,7 @@ namespace Frontend
         private void bDeletePerson_Click(object sender, EventArgs e)
         {
             var personId = (string) lbPersons.SelectedItem;
-            DAO.DeletePerson(1, personId);
+            DAO.DeletePerson(SelectedFamily, personId);
             ReloadPersons();
         }
 
@@ -77,9 +86,9 @@ namespace Frontend
 
         private void bSavePerson_Click(object sender, EventArgs e)
         {
-            var personId = (string)lbPersons.SelectedItem;
-            DAO.DeletePerson(1, personId);
-            DAO.CreatePerson(1, tbDetails.Text);
+            var personId = (string) lbPersons.SelectedItem;
+            DAO.DeletePerson(SelectedFamily, personId);
+            DAO.CreatePerson(SelectedFamily, tbDetails.Text);
             ReloadPersons();
         }
 
@@ -92,10 +101,32 @@ namespace Frontend
         private void bDeleteMarriage_Click(object sender, EventArgs e)
         {
             var row = dgMarriages.CurrentRow;
-            var marriageId = (string)row.Cells[0].Value;
-            DAO.DeleteMarriage(1, marriageId);
-            var personId = (string) lbPersons.SelectedItem;
+            var marriageId = (string) row.Cells[0].Value;
+            DAO.DeleteMarriage(SelectedFamily, marriageId);
             DisplayPersonMarriages();
+        }
+
+        private void bAddFamily_Click(object sender, EventArgs e)
+        {
+            DAO.AddFamily(tbFamilyName.Text);
+            ReloadFamilies();
+        }
+
+        private void lbFamilies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var s = lbFamilies.SelectedItem.ToString();
+            var l = s.IndexOf("/");
+            var id = s.Substring(0, l);
+            SelectedFamily = int.Parse(id);
+
+            ReloadPersons();
+        }
+
+        private void bDeleteFamily_Click(object sender, EventArgs e)
+        {
+            DAO.DeleteFamily(SelectedFamily);
+            ReloadFamilies();
+            ReloadPersons();
         }
     }
 

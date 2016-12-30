@@ -25,7 +25,7 @@ namespace Frontend
                     new XAttribute("sex", sex.Text), new XAttribute("surname", surname.Text), new XElement("born", new XAttribute("date", born.Text)), new XElement("died", new XAttribute("date", died.Text)),
                     new XElement("mother", mother.Text), new XElement("father", father.Text))).ToString();
 
-            DAO.CreatePerson(1, xml);
+            DAO.CreatePerson(_main.SelectedFamily, xml);
             _main.ReloadPersons();
 
             this.Close();
