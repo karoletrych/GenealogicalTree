@@ -57,7 +57,8 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Setup" />
+    <Folder Include="Person" />
+    <Folder Include="Marriage" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -67,22 +68,15 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="ReadPerson.sql" />
     <Build Include="Families.sql" />
-    <PostDeploy Include="Setup\setup.sql" />
+    <Build Include="Marriage\ReadMarriagesOfPerson.sql" />
+    <Build Include="Person\ReadPerson.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DeletePerson.cs" />
-    <Compile Include="CreatePerson.cs" />
-    <Compile Include="ReadRootPersons.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Application\Application.csproj">
-      <Name>Application</Name>
-      <Project>{a36d384c-852b-4e32-b0f5-9ba40beec1a0}</Project>
-      <Private>True</Private>
-      <IsModelAware>True</IsModelAware>
-      <GenerateSqlClrDdl>True</GenerateSqlClrDdl>
-    </ProjectReference>
+    <Compile Include="Person\CreatePerson.cs" />
+    <Compile Include="Person\DeletePerson.cs" />
+    <Compile Include="Marriage\CreateMarriage.cs" />
+    <Compile Include="Marriage\DeleteMarriage.cs" />
+    <Compile Include="Person\ReadAllPersonsIds.cs" />
   </ItemGroup>
 </Project>
