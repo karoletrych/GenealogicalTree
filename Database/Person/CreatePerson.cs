@@ -24,7 +24,6 @@ public partial class StoredProcedures
             try
             {
                 var command = new SqlCommand("SELECT Family FROM Families WHERE Id = " + familyId, connection, transaction);
-                //TODO use executeXMLReader
                 var reader = command.ExecuteReader();
                 SqlXml newXml = null;
 
