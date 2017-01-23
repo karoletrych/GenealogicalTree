@@ -5,7 +5,7 @@ using System.Linq;
 using System.Xml.Linq;
 using Microsoft.SqlServer.Server;
 
-public class UserDefinedFunctions
+public partial class UserDefinedFunctions
 {
     [SqlFunction(DataAccess = DataAccessKind.Read,
             TableDefinition = "PersonsIds nvarchar(200)",

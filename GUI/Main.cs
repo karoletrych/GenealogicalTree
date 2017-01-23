@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.Text.RegularExpressions;
 
 namespace Frontend
 {
@@ -17,30 +18,63 @@ namespace Frontend
 
         private void Main_Load(object sender, EventArgs e)
         {
+            DAO.CreateFamiliesTable();
             ReloadFamilies();
-            ReloadPersons();
+            ReloadPersons("");
         }
 
         private void ReloadFamilies()
         {
-            lbFamilies.Items.Clear();
+            lvFamilies.Items.Clear();
+            lvFamilies.Columns.Clear();
+            lvFamilies.View = View.Details;
+            lvFamilies.FullRowSelect = true;
+
+            lvFamilies.Columns.Add("id");
+            lvFamilies.Columns.Add("nazwa");
+            
             var families = DAO.ReadFamilies().ToDictionary(pair => pair.Key.ToString(), pair => pair.Value);
-            lbFamilies.Items.AddRange(families.Select(x => x.Key + "/" + x.Value).ToArray());
+            foreach (var family in families)
+            {
+                var item =
+                    new ListViewItem(new[] { family.Key, family.Value });
+                lvFamilies.Items.Add(item);
+            }
+        }
+
+
+        public void ReloadPersons(string filter)
+        {
+            lbPersons.Items.Clear();
+            object[] ids = DAO.PersonIds(SelectedFamily).ToArray();
+            if (!filter.Equals(""))
+            {
+                var filteredIds = ids.Cast<string>().Where(id => id.Contains(filter)).Cast<object>().ToArray();
+                lbPersons.Items.AddRange(filteredIds);
+            }
+            else
+                lbPersons.Items.AddRange(ids);
         }
 
         public void ReloadPersons()
         {
-            lbPersons.Items.Clear();
-            object[] ids = DAO.PersonIds(SelectedFamily).ToArray();
-            lbPersons.Items.AddRange(ids);
+            ReloadPersons("");
         }
 
         private void lbPersons_SelectedIndexChanged(object sender, EventArgs e)
         {
             DisplayPersonDetails();
             DisplayPersonMarriages();
+            DisplayPersonsChildren();
         }
 
+        private void DisplayPersonsChildren()
+        {
+            var selectedId = (string)lbPersons.SelectedItem;
+            var children = DAO.ReadPersonsDescendants(SelectedFamily, selectedId, (int)generations.Value);
+            var xDocument = XDocument.Parse(children);
+            tbDescendants.Text = xDocument.ToString();
+        }
 
         public void DisplayPersonMarriages()
         {
@@ -112,21 +146,31 @@ namespace Frontend
             ReloadFamilies();
         }
 
-        private void lbFamilies_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var s = lbFamilies.SelectedItem.ToString();
-            var l = s.IndexOf("/");
-            var id = s.Substring(0, l);
-            SelectedFamily = int.Parse(id);
-
-            ReloadPersons();
-        }
-
         private void bDeleteFamily_Click(object sender, EventArgs e)
         {
             DAO.DeleteFamily(SelectedFamily);
             ReloadFamilies();
             ReloadPersons();
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var id = lvFamilies.SelectedItems;
+            if (id.Count != 0)
+            {
+                SelectedFamily = int.Parse(id[0].Text);
+                ReloadPersons();
+            }
+        }
+
+        private void generations_ValueChanged(object sender, EventArgs e)
+        {
+            DisplayPersonsChildren();
+        }
+
+        private void search_TextChanged(object sender, EventArgs e)
+        {
+            ReloadPersons(search.Text);
         }
     }
 

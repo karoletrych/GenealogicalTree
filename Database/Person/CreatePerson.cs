@@ -33,7 +33,12 @@ public partial class StoredProcedures
                     {
                         var xml = reader.GetSqlXml(0);
                         var xDocument = XDocument.Parse(xml.Value);
+
                         var newPerson = XElement.Parse(newPersonXml.Value);
+                        var people = xDocument.Descendants().Single(node => node.Name.LocalName == "people");
+                        if (people.Elements().Any(x => x.Attribute("id").Value == newPerson.Attribute("id").Value))
+                            return;
+                        
                         xDocument.Descendants().Single(node => node.Name.LocalName == "people").Add(newPerson);
                         newXml = new SqlXml(xDocument.CreateReader());
                     }

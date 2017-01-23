@@ -8,7 +8,24 @@ namespace Frontend
     public static class DAO
     {
         private static readonly string ConnectionString =
-            @"Data Source=DESKTOP-34EOQPB\SQLEXPRESS;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            @"Data Source=MSSQLSERVER;Initial Catalog=testdatabase;Integrated Security=True";
+
+        public static void CreateFamiliesTable()
+        {
+                using (
+                    var connection =
+                        new SqlConnection(
+                            ConnectionString)
+                )
+                {
+                    using (var command = new SqlCommand(@"if not exists (select * from sysobjects where name='Families' and xtype='U')
+CREATE TABLE [dbo].[Families]([Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,	[Family] XML NULL,[FamilyName] NVARCHAR(50) NULL);", connection))
+                    {
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+        }
 
         public static IEnumerable<KeyValuePair<int, string>> ReadFamilies()
         {
@@ -115,6 +132,30 @@ VALUES ('<family><people></people><marriages></marriages></family>',@familyName)
                     connection.Open();
                     var person = command.ExecuteScalar();
                     return (string) person;
+                }
+            }
+        }
+
+        public static string ReadPersonsDescendants(int familyId, string id, int generations)
+        {
+            using (
+                var connection =
+                    new SqlConnection(
+                        ConnectionString))
+            {
+                using (var command = new SqlCommand("SELECT dbo.ReadPersonsDescendants(@family_id, @person_id, @generations)", connection)
+                {
+                    Parameters =
+                    {
+                        new SqlParameter("@person_id", id),
+                        new SqlParameter("@family_id", familyId),
+                        new SqlParameter("@generations", generations)                        
+                    }
+                })
+                {
+                    connection.Open();
+                    var children = command.ExecuteScalar();
+                    return (string)children;
                 }
             }
         }

@@ -7,7 +7,7 @@ using Microsoft.SqlServer.Server;
 public partial class StoredProcedures
 {
     [SqlProcedure]
-    public static void CreateMarriage(SqlInt32 familyId, SqlString marriageId, SqlString husbandId, SqlString wifeId, SqlDateTime marriageDate)
+    public static void CreateMarriage(SqlInt32 familyId, SqlString marriageId, SqlString husbandId, SqlString wifeId, SqlString marriageDate)
     {
         using (var connection = new SqlConnection("context connection=true"))
         {
